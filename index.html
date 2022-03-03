@@ -28,24 +28,28 @@
 				<input name="link1Input" class="linkInput" type="text" />
 				<label for="shopName">Naziv prodavnice</label>
 				<input type="text" name="shopName" class="shopInput" />
+				<input type="color" class="buttonColor" name="buttonColor" value="#e66465">
 			</div>
 			<label for="link2Input">Drugi Link</label>
 			<div>
 				<input name="link2Input" class="linkInput" type="text" />
 				<label for="shopName">Naziv prodavnice</label>
 				<input type="text" name="shopName" class="shopInput" />
+				<input type="color" class="buttonColor" name="buttonColor" value="#e66465">
 			</div>
 			<label for="link3Input">Treci Link</label>
 			<div>
 				<input name="link3Input" class="linkInput" type="text" />
 				<label for="shopName">Naziv prodavnice</label>
 				<input type="text" name="shopName" class="shopInput" />
+				<input type="color" class="buttonColor" name="buttonColor" value="#e66465">
 			</div>
 			<label for="link4Input">Cetvrti Link</label>
 			<div>
 				<input name="link4Input" class="linkInput" type="text" />
 				<label for="shopName">Naziv prodavnice</label>
 				<input type="text" name="shopName" class="shopInput" />
+				<input type="color" class="buttonColor" name="buttonColor" value="#e66465">
 			</div>
 			<button type="submit" >Generisi Link</button>
 		</form>
@@ -57,10 +61,11 @@
 				let string = '[su_accordion][su_spoiler title="Also Check" open="no" style="fancy" icon="chevron" anchor="" anchor_in_url="no" class="my-custom-spoiler"]';
 				let inputs = $(".linkInput");
 				let shopInputs = $(".shopInput");
+				let colors = $(".buttonColor");
 				for ( let i = 0; i < inputs.length; i++ ) {
 					if ( inputs[i].value != "" ) {
 					
-						string = string + '[su_button url="' + inputs[i].value + '" Style="flat" background="#00a550" size="6" radius="round"]Check on ' + shopInputs[i].value + '[/su_button]'
+						string = string + '[su_button url="' + inputs[i].value + '" Style="flat" background="' +  colors[i].value  +  '" size="6" radius="round"]Check on ' + shopInputs[i].value + '[/su_button]'
 					}
 				}
 				string = string + '[/su_spoiler] [/su_accordion]';
