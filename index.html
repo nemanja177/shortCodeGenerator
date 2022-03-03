@@ -1,0 +1,85 @@
+<html>
+	<head>
+		<title>Short Code Creator</title>
+		<style>
+			#linkForm {
+				display: flex;
+				flex-direction: column;
+				width: 70%;
+			}
+			#linkForm .linkInput {
+				width: 60%;
+			}
+			#linkForm .shopInput {
+				width: 10%;
+			}
+			#linkForm button {
+				width: 30%;
+				margin: 2% auto;
+			}
+		</style>
+	</head>
+	<body>
+	
+		<h2>Short Code Generator</h2>
+		<form id="linkForm">
+			<label for="link1Input">Prvi Link</label>
+			<div>
+				<input name="link1Input" class="linkInput" type="text" />
+				<label for="shopName">Naziv prodavnice</label>
+				<input type="text" name="shopName" class="shopInput" />
+			</div>
+			<label for="link2Input">Drugi Link</label>
+			<div>
+				<input name="link2Input" class="linkInput" type="text" />
+				<label for="shopName">Naziv prodavnice</label>
+				<input type="text" name="shopName" class="shopInput" />
+			</div>
+			<label for="link3Input">Treci Link</label>
+			<div>
+				<input name="link3Input" class="linkInput" type="text" />
+				<label for="shopName">Naziv prodavnice</label>
+				<input type="text" name="shopName" class="shopInput" />
+			</div>
+			<label for="link4Input">Cetvrti Link</label>
+			<div>
+				<input name="link4Input" class="linkInput" type="text" />
+				<label for="shopName">Naziv prodavnice</label>
+				<input type="text" name="shopName" class="shopInput" />
+			</div>
+			<button type="submit" >Generisi Link</button>
+		</form>
+		<p id="output"></p>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script>	
+			document.getElementById("linkForm").addEventListener("submit", function(e) {
+				e.preventDefault();
+				let string = '[su_accordion][su_spoiler title="Also Check" open="no" style="fancy" icon="chevron" anchor="" anchor_in_url="no" class="my-custom-spoiler"]';
+				let inputs = $(".linkInput");
+				let shopInputs = $(".shopInput");
+				for ( let i = 0; i < inputs.length; i++ ) {
+					if ( inputs[i].value != "" ) {
+					
+						string = string + '[su_button url="' + inputs[i].value + '" Style="flat" background="#00a550" size="6" radius="round"]Check on ' + shopInputs[i].value + '[/su_button]'
+					}
+				}
+				string = string + '[/su_spoiler] [/su_accordion]';
+				
+				document.getElementById("output").innerHTML = string;
+			});
+			
+				/* var mySubString = inputs[i].value.substring( inputs[i].value.indexOf("www.") + 4, inputs[i].value.lastIndexOf(".com"));
+						console.log(mySubString);
+						
+			function addLink() {
+				let form = document.getElementById("linkForm");
+				
+				let newLabel = document.createElement("label");
+				
+				let newLinkDiv = document.createElement("div");
+					let linkInput = documen 
+				
+			}*/
+		</script>
+	</body>
+</html>
