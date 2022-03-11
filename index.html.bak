@@ -95,11 +95,10 @@
 			document.getElementById("keywordForm").addEventListener("submit", function(e) {
 				e.preventDefault();
 				let keyword = document.getElementById("keyword").value
-				window.open("https://www.walmart.com/search?q=" + keyword);
+				console.log(keyword[0].value);
+				let walmart = "https://www.walmart.com/search?q=" + keyword;
+				window.open(walmart);
 				window.open("https://www.ebay.com/sch/i.html?_nkw=" + keyword);
-				window.open("https://www.u-buy.us/search/?q=" + keyword);
-				window.open("https://www.bestbuy.com/site/searchpage.jsp?st=" + keyword);
-				window.open("https://www.target.com/s?searchTerm=" + keyword);
 			});
 		</script>
 	</body>
